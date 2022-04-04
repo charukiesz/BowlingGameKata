@@ -56,7 +56,16 @@ public class RomanNumeralsTest {
         //assert
         Assertions.assertEquals(expectedResult, actual);
     }
-
+    @Test
+    public void checkInputNumber9(){
+        //arrange
+        RomanNumerals romanNumeral = new RomanNumerals();
+        //act
+        String expectedResult = "IX";
+        String  actual = romanNumeral.getRomanNumeral(9);
+        //assert
+        Assertions.assertEquals(expectedResult, actual);
+    }
 
     @Test
     public void checkInputNumberZero(){

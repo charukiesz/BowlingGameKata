@@ -21,7 +21,7 @@ public class RomanNumeralsTest {
         //arrange
         RomanNumerals romanNumeral  = new RomanNumerals();
         //act
-        String expectedResult = "No conversion for zero, please enter a number between 1 and 3000.";
+        String expectedResult = "No conversion for this number, please enter a number between 1 and 3000.";
         String actual = romanNumeral.getRomanNumeral(0);
         //assert
         Assertions.assertEquals(expectedResult, actual);
@@ -31,7 +31,7 @@ public class RomanNumeralsTest {
         //arrange
         RomanNumerals romanNumeral = new RomanNumerals();
         //act
-        String expectedResult = "No conversion for numbers above 3000, please enter a number between 1 and 3000.";
+        String expectedResult = "No conversion for this number, please enter a number between 1 and 3000.";
         String actual = romanNumeral.getRomanNumeral(3001);
         //assert
         Assertions.assertEquals(expectedResult, actual);

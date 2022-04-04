@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
@@ -8,11 +8,12 @@ public class RomanNumerals {
     public RomanNumerals() {
     }
 
-    //attribute
-    public Integer inputNumber = 1;
+    //attributes
+   // private Integer inputNumber = 1;
 
 
-    private static HashMap<String, Integer> romanNumerals = new HashMap<String, Integer>() {{  //Dictionary of Roman Numerals
+    //Dictionary of Roman Numerals
+    private static HashMap<String, Integer> romanNumerals = new HashMap<String, Integer>() {{
         put("I", 1);
         put("II", 2);
         put("III", 3);
@@ -26,16 +27,28 @@ public class RomanNumerals {
 
     }};
 
+    public static void main(String[] args) {
+
+        Scanner myObj = new Scanner(System.in); //create scanner object
+        System.out.println("Please enter a number:");
+
+        int input = Integer.parseInt(myObj.nextLine()); //read user input
+
+        String result = getRomanNumeral(input);
+
+        System.out.println("The Roman Numeral for " + input + " is " + result);
+
+    }
 
     //Dynamically populate data structure at runtime
-/*if (inputNumber >= 1 & inputNumber <= 10) {
-        return "I";
+  /*if (inputNumber >= 1 & inputNumber <= 10) {
+        return ;
 
     }else if (inputNumber == 0 || inputNumber >= 11) {
-        return "No conversion for this number, please enter a number between 1 and 10 inclusive."; */
+        return "No conversion for this number, please enter a number between 1 and 10 inclusive.";*/
 
     //methods
-    public String getRomanNumeral(Integer inputNumber) {
+    public static String getRomanNumeral(Integer inputNumber) {
         //if hashmap contains the inputNumber
         if (romanNumerals.containsValue(inputNumber)) {
             //iterate over each entry of the hashmap
@@ -50,11 +63,7 @@ public class RomanNumerals {
             return "Number not recognised";
         }
         return "Number not recognised";
-        /*if (inputNumber >= 1 & inputNumber <= 10) {
-            return "I";
 
-        }else if (inputNumber == 0 || inputNumber >= 11) {
-            return "No conversion for this number, please enter a number between 1 and 10 inclusive."; */
     }
 
 

@@ -88,7 +88,7 @@ public class RomanNumeralsTest {
         Assertions.assertEquals(expectedResult, actual);
     }
     @Test
-    public void checkInputNumber3001(){
+    public void checkInputNumber11(){
         //arrange
         RomanNumerals romanNumeral = new RomanNumerals();
         //act

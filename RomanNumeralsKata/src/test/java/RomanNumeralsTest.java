@@ -36,6 +36,16 @@ public class RomanNumeralsTest {
         //assert
         Assertions.assertEquals(expectedResult, actual);
     }
+    @Test
+    public void checkInputNumber5(){
+        //arrange
+        RomanNumerals romanNumeral = new RomanNumerals();
+        //act
+        String expectedResult = "V";
+        String  actual = romanNumeral.getRomanNumeral(5);
+        //assert
+        Assertions.assertEquals(expectedResult, actual);
+    }
 
 
     @Test

@@ -17,6 +17,18 @@ public class RomanNumeralsTest {
     }
 
     @Test
+    public void checkInputNumber2(){
+        //arrange
+        RomanNumerals romanNumeral = new RomanNumerals();
+        //act
+        String expectedResult = "II";
+        String  actual = romanNumeral.getRomanNumeral(2);
+        //assert
+        Assertions.assertEquals(expectedResult, actual);
+    }
+
+
+    @Test
     public void checkInputNumberZero(){
         //arrange
         RomanNumerals romanNumeral  = new RomanNumerals();

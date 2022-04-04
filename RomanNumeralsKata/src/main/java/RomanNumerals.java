@@ -14,7 +14,7 @@ public class RomanNumerals {
 
     private static HashMap<String, Integer> romanNumerals = new HashMap<String, Integer>() {{  //Dictionary of Roman Numerals
         put("I", 1);
-       /* put("II", 2);
+        put("II", 2);
         put("III", 3);
         put("IV", 4);
         put("V", 5);
@@ -22,7 +22,7 @@ public class RomanNumerals {
         put("VII", 7);
         put("VIII", 8);
         put("IX", 9);
-        put("X", 10); */
+        put("X", 10);
 
     }};
 

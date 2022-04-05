@@ -4,7 +4,7 @@ public class TicTacToe {
     public TicTacToe(){}
 
     //attributes
-
+    private  char [][] gameBoard;
 
     //gameBoard
 
@@ -51,9 +51,10 @@ public class TicTacToe {
     public void checkTurn(){}
 
     public boolean isSquareTaken(int column, int row){
-        //if square is null return false
-        //else return true
-    return true;}
+        if (gameBoard[column][row] == ' '){
+            return false;
+        } else return true;
+    }
 
 
     public boolean setSquare(int column, int row, char play){
@@ -62,7 +63,7 @@ public class TicTacToe {
         return true;
     }
 
-
+   private void getGameBoard(){}
 
     public void whoseFirst(){
         //randomly choose between X and O

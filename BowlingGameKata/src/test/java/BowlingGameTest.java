@@ -11,32 +11,31 @@ public class BowlingGameTest {
         game = new BowlingGame();   //Create an instance of the game for each test
     }
 
- @Test
-    public void checkCanRollBall() {
-    //act
-     game.roll(0);
- }
+ 
 
 @Test
     public void checkCanScoreGutterGame(){
-     //further arrange
-    for (int i = 0; i < 20 ; i++) {
-        game.roll(0);
-    }
-     int expected = 0;
-     //act and assert
+    //further arrange
+    doRolls(20,0);
+    int expected = 0;
+    //act and assert
     Assertions.assertEquals(expected, game.getScore());
 
 }
 @Test
     public void checkCanScoreAGameOfOnes(){
     //further arrange
-    for (int i = 0; i < 20 ; i++) {
-        game.roll(1);
-    }
+    doRolls(20, 1);
     int expected = 20;
     //act and assert
     Assertions.assertEquals(expected, game.getScore());
 }
+
+//method to simulate number of rolls and pins knocked down
+    private void doRolls(int times, int pinsDown){
+        for (int i = 0; i < times; i++) {
+            game.roll(pinsDown);
+        }
+    }
 
 }

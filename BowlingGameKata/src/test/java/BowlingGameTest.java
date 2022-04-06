@@ -1,20 +1,24 @@
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class BowlingGameTest {
 
+    private BowlingGame game;
+
+    @BeforeEach
+    public void setGame(){
+        game = new BowlingGame();   //Create an instance of the game for each test
+    }
+
  @Test
     public void checkCanRollBall() {
-     //arrange
-     BowlingGame game = new BowlingGame();
-     //act
+    //act
      game.roll(0);
  }
 
 @Test
     public void checkCanScoreGutterGame(){
-     //arrange
-     BowlingGame game = new BowlingGame();
      //further arrange
     for (int i = 0; i < 20 ; i++) {
         game.roll(0);
@@ -26,8 +30,6 @@ public class BowlingGameTest {
 }
 @Test
     public void checkCanScoreAGameOfOnes(){
-    //arrange
-    BowlingGame game = new BowlingGame();
     //further arrange
     for (int i = 0; i < 20 ; i++) {
         game.roll(1);

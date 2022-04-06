@@ -11,27 +11,38 @@ public class BowlingGameTest {
         game = new BowlingGame();   //Create an instance of the game for each test
     }
 
- 
-
-@Test
+    @Test
     public void checkCanScoreGutterGame(){
     //further arrange
     doRolls(20,0);
     int expected = 0;
     //act and assert
     Assertions.assertEquals(expected, game.getScore());
+    }
 
-}
-@Test
+    @Test
     public void checkCanScoreAGameOfOnes(){
     //further arrange
     doRolls(20, 1);
     int expected = 20;
     //act and assert
     Assertions.assertEquals(expected, game.getScore());
-}
+    }
 
-//method to simulate number of rolls and pins knocked down
+    @Test
+    public void checkCanScoreSpareFollowedByThree(){
+    //further arrange
+    game.roll(5);
+    game.roll(5);
+    game.roll(3);
+    doRolls(17, 0);
+    int expected = 16;
+    //act and assert
+    Assertions.assertEquals(expected,game.getScore());
+    }
+
+
+    //method to simulate number of rolls and pins knocked down
     private void doRolls(int times, int pinsDown){
         for (int i = 0; i < times; i++) {
             game.roll(pinsDown);

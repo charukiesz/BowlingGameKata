@@ -21,9 +21,20 @@ public class BowlingGameTest {
     }
      int expected = 0;
      //act and assert
-    Assertions.assertEquals(expected, game.score());
+    Assertions.assertEquals(expected, game.getScore());
 
 }
-
+@Test
+    public void checkCanScoreAGameOfOnes(){
+    //arrange
+    BowlingGame game = new BowlingGame();
+    //further arrange
+    for (int i = 0; i < 20 ; i++) {
+        game.roll(1);
+    }
+    int expected = 20;
+    //act and assert
+    Assertions.assertEquals(expected, game.getScore());
+}
 
 }

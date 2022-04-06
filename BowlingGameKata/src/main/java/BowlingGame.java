@@ -1,17 +1,18 @@
 public class BowlingGame {
 //constructor
     BowlingGame(){}
-//attributes
 
+//attributes
+private int score = 0;  //Score tally
 
 //methods
 
-    public void roll(int pinsDown){
-
+    public void roll(int pinsDown){   //Increments the score by the number of pins knocked down in successive rolls
+        score += pinsDown;
     }
 
-    public int score(){
-        return 0;
+    public int getScore(){            //Returns the current score
+        return score;
     }
 
 }

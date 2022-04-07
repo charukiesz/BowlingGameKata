@@ -38,6 +38,15 @@ public class BowlingGameTest {
     Assertions.assertEquals(expected,game.getScore());
     }
 
+    @Test
+    public void checkCanScoreStrikeFollowedByThreeThenThree(){
+    //further arrange
+    game.doRolls(10, 3,3, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
+        int expected = 22;
+        //act and assert
+        Assertions.assertEquals(expected,game.getScore());
+    }
+
 
 
 

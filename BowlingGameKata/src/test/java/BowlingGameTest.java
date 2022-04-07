@@ -47,7 +47,17 @@ public class BowlingGameTest {
         Assertions.assertEquals(expected,game.getScore());
     }
 
+    @Test
+    public void checkCanScoreAllStrikes(){
+        //further arrange
+        game.doRolls(10, 10, 10, 10, 10, 10, 10, 10, 10, 10,10,10);
+        int expected = 300;
+        //act assert
+        Assertions.assertEquals(expected, game.getScore());
+    }
 
-
+//Improvements:
+//Tests for other scenarios e.g. (0,10, 2,4, ...)
+//Parameterize tests
 
 }

@@ -1,33 +1,34 @@
 public class BowlingGame {
-//constructor
+//Constructor
     BowlingGame(){}
 
-//attributes
+//Attributes
 private int currentRoll = 0;        //Roll counter
 private int [] rolls = new int[21]; //Array to store sequence of rolls
 
+//Sequence of pins down for rolls in a game
 public void doRolls(int... rolls){
         for (int pinsDown : rolls) {
             roll(pinsDown);
         }
     }
 
-//methods
-
+//Methods
+    //Method to count the number
     public void roll(int pinsDown){
         rolls[currentRoll++] = pinsDown;
-    }
+    } //
 
     public int getScore() {
         int score = 0;
         int cursor = 0;
         for (int frame = 0; frame < 10; frame++) {     //Iterates over the rolls array frame by frame
-            if(rolls[cursor] == 10){                     //Strike
+            if(isStrike(cursor)){                     //Check for a Strike
                 score += 10 + rolls[cursor + 1] + rolls[cursor + 2];
-                cursor++;
-        }else if (isSpare(cursor)) {                     //Spare
+                cursor++;                               //Since only one roll in the current frame, move cursor to the next frame
+        }else if (isSpare(cursor)) {                     //Check for a Spare
                 score = 10 + rolls[cursor + 2];        //Spare score is equal to 10 plus the number of pins down in the first roll of the next frame
-                cursor += 2;                           //move cursor to the next frame
+                cursor += 2;                           //Move cursor to the next frame
             } else {
                 score += rolls[cursor] + rolls[cursor + 1];
                 cursor += 2;
@@ -36,9 +37,16 @@ public void doRolls(int... rolls){
         }return score;
     }
 
+    //Method to check condition of a Spare
     private boolean isSpare(int cursor){
-      return (rolls[cursor] + rolls[cursor + 1] == 10);
+        return (rolls[cursor] + rolls[cursor + 1] == 10);
     }
+
+    //Method to check condition for a Strike
+    private boolean isStrike(int cursor){
+        return rolls[cursor] == 10;
+    }
+
 }
 
 

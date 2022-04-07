@@ -8,7 +8,7 @@ public class BowlingGameTest {
 
     @BeforeEach
     public void setGame(){
-        game = new BowlingGame();   //Create an instance of the game for each test
+        game = new BowlingGame();   //Create an instance of the game before each test
     }
 
     @Test
